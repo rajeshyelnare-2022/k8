@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: yelnare-jdk11sb
+  name: yelnare-jdk11sb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yelnare
+  template:
+    metadata:
+      labels:
+        app: yelnare
+    spec:
+      containers:
+        -
+          image: "yelnare/jdk11sb:rajesh1"
+          name: yelnare-jdk11sb
+          ports:
+            -
+              containerPort: 8080
+
+~                                             
